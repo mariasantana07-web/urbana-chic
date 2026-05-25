@@ -2,22 +2,190 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Portfólio de Moda</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBANA CHIC - Moda em Alta</title>
+    <link rel="stylesheet" href="CSS">
 </head>
 <body>
+    <!-- ==================== HEADER ==================== -->
     <header>
-        <h1>URBANACHIC/Maria Santana</h1>
-        <p>Designer de Moda & Estilista</p>
+        <h1>✨ URBANA CHIC ✨</h1>
+        <p>Descubra as Peças que Estão em ALTA</p>
+        <nav>
+            <a href="#galeria">Inspiração</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#tendencias">Tendências</a>
+            <a href="#ia-finder">IA Finder</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
-    <section id="galeria">
-        <h2>Coleção Outono 2024</h2>
-        <img src="https://pin.it/egtcpAHw0"alt="capa vogue" width="300">
+    <!-- ==================== GALERIA DE INSPIRAÇÃO ==================== -->
+    <section id="galeria" class="galeria-inspiracao">
+        <div class="container">
+            <h2>🎨 Galeria de Inspiração</h2>
+            <p class="subtitle">Clique em qualquer estilo para explorar as tendências</p>
+            
+            <div class="galeria-grid">
+                <!-- Item 1: Verão Vibrante -->
+                <div class="galeria-item" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);" onclick="selecionarCategoria('tops')">
+                    <div class="emoji-galeria">☀️</div>
+                    <h3>Verão Vibrante</h3>
+                    <p>Cores quentes e alegres</p>
+                </div>
+
+                <!-- Item 2: Noite Elegante -->
+                <div class="galeria-item" style="background: linear-gradient(135deg, #6C5CE7 0%, #0984E3 100%);" onclick="selecionarCategoria('vestidos')">
+                    <div class="emoji-galeria">🌙</div>
+                    <h3>Noite Elegante</h3>
+                    <p>Sofisticação e glamour</p>
+                </div>
+
+                <!-- Item 3: Minimalista -->
+                <div class="galeria-item" style="background: linear-gradient(135deg, #81ECEC 0%, #55EFC4 100%);" onclick="selecionarCategoria('calcas')">
+                    <div class="emoji-galeria">🎨</div>
+                    <h3>Minimalista</h3>
+                    <p>Simplicidade elegante</p>
+                </div>
+
+                <!-- Item 4: Bold & Beautiful -->
+                <div class="galeria-item" style="background: linear-gradient(135deg, #FD79A8 0%, #E84393 100%);" onclick="selecionarCategoria('acessorios')">
+                    <div class="emoji-galeria">💎</div>
+                    <h3>Bold & Beautiful</h3>
+                    <p>Ousadia e estilo</p>
+                </div>
+
+                <!-- Item 5: Futurista -->
+                <div class="galeria-item" style="background: linear-gradient(135deg, #00D2FC 0%, #00B4D8 100%);" onclick="selecionarCategoria('calcados')">
+                    <div class="emoji-galeria">🚀</div>
+                    <h3>Futurista</h3>
+                    <p>Inovação e modernidade</p>
+                </div>
+
+                <!-- Item 6: Festival Vibes -->
+                <div class="galeria-item" style="background: linear-gradient(135deg, #F038FF 0%, #FFFF00 100%);" onclick="selecionarCategoria('maquiagem')">
+                    <div class="emoji-galeria">🎉</div>
+                    <h3>Festival Vibes</h3>
+                    <p>Diversão e criatividade</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- ==================== CATEGORIAS STATS ==================== -->
+    <section id="categorias" class="categorias-stats">
+        <div class="container">
+            <h2>📊 Categorias Populares</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);" onclick="selecionarCategoria('tops')">
+                    <div class="stat-emoji">👕</div>
+                    <h3>Tops</h3>
+                    <div class="stat-number">87%</div>
+                    <p class="stat-desc">Em tendência</p>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, #6C5CE7 0%, #0984E3 100%);" onclick="selecionarCategoria('calcas')">
+                    <div class="stat-emoji">👖</div>
+                    <h3>Calças</h3>
+                    <div class="stat-number">76%</div>
+                    <p class="stat-desc">Em alta</p>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, #FD79A8 0%, #E84393 100%);" onclick="selecionarCategoria('vestidos')">
+                    <div class="stat-emoji">👗</div>
+                    <h3>Vestidos</h3>
+                    <div class="stat-number">92%</div>
+                    <p class="stat-desc">Favorito</p>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, #00D2FC 0%, #00B4D8 100%);" onclick="selecionarCategoria('calcados')">
+                    <div class="stat-emoji">👟</div>
+                    <h3>Calçados</h3>
+                    <div class="stat-number">84%</div>
+                    <p class="stat-desc">Blockbuster</p>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, #81ECEC 0%, #55EFC4 100%);" onclick="selecionarCategoria('acessorios')">
+                    <div class="stat-emoji">💍</div>
+                    <h3>Acessórios</h3>
+                    <div class="stat-number">88%</div>
+                    <p class="stat-desc">Destaque</p>
+                </div>
+
+                <div class="stat-card" style="background: linear-gradient(135deg, #F038FF 0%, #FFFF00 100%);" onclick="selecionarCategoria('maquiagem')">
+                    <div class="stat-emoji">💄</div>
+                    <h3>Beleza</h3>
+                    <div class="stat-number">86%</div>
+                    <p class="stat-desc">Essencial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TENDÊNCIAS ==================== -->
+    <main id="tendencias" class="tendencias">
+        <div class="container">
+            <h2>🔥 Tendências em Alta</h2>
+            <p class="subtitle">Filtre por categoria e descubra o que está bomba</p>
+
+            <div class="filtros">
+                <button class="filtro-btn ativo" data-filtro="todos">📌 Tudo</button>
+                <button class="filtro-btn" data-filtro="tops">👕 Tops</button>
+                <button class="filtro-btn" data-filtro="calcas">👖 Calças</button>
+                <button class="filtro-btn" data-filtro="vestidos">👗 Vestidos</button>
+                <button class="filtro-btn" data-filtro="calcados">👟 Calçados</button>
+                <button class="filtro-btn" data-filtro="acessorios">💍 Acessórios</button>
+                <button class="filtro-btn" data-filtro="maquiagem">💄 Beleza</button>
+            </div>
+
+            <div id="tendencias-container" class="tendencias-grid">
+                <!-- Preenchido pelo JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== IA FINDER ==================== -->
+    <section id="ia-finder" class="ai-finder">
+        <div class="container">
+            <h2>🤖 IA Trend Finder</h2>
+            <p>Digite seu estilo favorito e deixe a IA recomendar!</p>
+            
+            <form id="form-ia">
+                <input 
+                    type="text" 
+                    id="input-estilo" 
+                    placeholder="Ex: casual, elegante, street-wear, futurista, festa, minimalista..."
+                    required
+                >
+                <button type="submit" class="btn-ia">🔍 Buscar</button>
+            </form>
+
+            <div id="resultado-ia" class="resultado-ia" style="display: none;">
+                <!-- Preenchido pelo JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTATO ==================== -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>📞 Entre em Contato</h2>
+            <p>📧 Email: <strong>maria.santana07@escola.pr.gov.br</strong></p>
+            <p>🌐 Acompanhe nossas tendências @urbanachic</p>
+            <p>💌 Quer sugestões? Mande uma mensagem!</p>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer>
-        <p>Contato:maria.santana07@escola.pr.gov.br</p>
+        <div class="container">
+            <p>© 2026 URBANA CHIC - Moda em Alta</p>
+            <p>Desenvolvido com 💖 por Maria Santana</p>
+            <p>Descobrir quais peças estão em ALTA 🔥</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
