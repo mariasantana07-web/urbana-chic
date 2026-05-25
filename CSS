@@ -27,7 +27,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* ==================== HEADER ==================== */
 header {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     padding: 3rem 0;
@@ -40,13 +40,15 @@ header h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    animation: pulse 2s infinite;
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
     opacity: 0.95;
+    font-weight: bold;
 }
 
 header nav {
@@ -62,19 +64,146 @@ header nav a {
     font-weight: bold;
     transition: all 0.3s ease;
     font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 header nav a:hover {
     transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.4);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Main */
+/* ==================== GALERIA INSPIRAÇÃO ==================== */
+.galeria-inspiracao {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.05), rgba(0, 212, 255, 0.05));
+}
+
+.galeria-inspiracao h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.galeria-inspiracao .subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.galeria-item {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+.galeria-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.emoji-galeria {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.galeria-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.galeria-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* ==================== CATEGORIAS STATS ==================== */
+.categorias-stats {
+    padding: 4rem 0;
+}
+
+.categorias-stats h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.6s ease-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin: 0.5rem 0;
+}
+
+.stat-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==================== MAIN / TENDÊNCIAS ==================== */
 main {
     padding: 4rem 0;
 }
 
-/* Tendências Section */
 .tendencias {
     padding: 4rem 0;
 }
@@ -188,7 +317,7 @@ main {
     color: var(--secondary-color);
 }
 
-/* AI Finder Section */
+/* ==================== IA FINDER ==================== */
 .ai-finder {
     background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(0, 212, 255, 0.1));
     border: 2px solid rgba(255, 20, 147, 0.3);
@@ -277,7 +406,75 @@ main {
     line-height: 1.8;
 }
 
-/* Contato Section */
+/* ==================== CATEGORIAS COMPLETAS ==================== */
+.categorias {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.05), rgba(0, 212, 255, 0.05));
+}
+
+.categorias h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.categorias-completas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.categoria-box {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+.categoria-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.categoria-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.categoria-box p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+.btn-comprar {
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-comprar:hover {
+    background: white;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* ==================== CONTATO ==================== */
 .contato {
     text-align: center;
     padding: 2rem 0;
@@ -293,11 +490,12 @@ main {
 }
 
 .contato p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #ccc;
+    margin: 0.5rem 0;
 }
 
-/* Footer */
+/* ==================== FOOTER ==================== */
 footer {
     background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(0, 212, 255, 0.1));
     border-top: 2px solid rgba(255, 20, 147, 0.3);
@@ -307,7 +505,12 @@ footer {
     color: #999;
 }
 
-/* Animações */
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+/* ==================== ANIMAÇÕES ==================== */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -348,7 +551,16 @@ footer {
     }
 }
 
-/* Responsividade */
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 20, 147, 0.2);
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 20, 147, 0.5);
+    }
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -362,12 +574,25 @@ footer {
         gap: 1rem;
     }
 
+    header nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
     .tendencias h2 {
         font-size: 1.8rem;
     }
 
     .tendencias-grid {
         grid-template-columns: 1fr;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #form-ia {
@@ -385,6 +610,10 @@ footer {
     .filtro-btn {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .categorias-completas {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -404,11 +633,19 @@ footer {
     }
 
     header nav a {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .tendencias h2 {
         font-size: 1.5rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
 
     .card-tendencia {
@@ -421,5 +658,24 @@ footer {
 
     .card-tendencia h3 {
         font-size: 1.2rem;
+    }
+
+    .emoji-galeria {
+        font-size: 2rem;
+    }
+
+    .stat-emoji {
+        font-size: 2rem;
+    }
+
+    #input-estilo {
+        min-width: 100%;
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-ia {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
