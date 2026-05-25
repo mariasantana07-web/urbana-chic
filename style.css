@@ -1,0 +1,609 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff1493;
+    --secondary-color: #00d4ff;
+    --dark-bg: #0f0f1e;
+    --light-bg: #1a1a2e;
+    --text-color: #ffffff;
+    --accent-color: #ffd700;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================== HEADER ==================== */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+    animation: slideDown 0.6s ease-out;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
+    animation: pulse 2s infinite;
+}
+
+header p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+header nav a:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* ==================== GALERIA INSPIRAÇÃO ==================== */
+.galeria-inspiracao {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.05), rgba(0, 212, 255, 0.05));
+}
+
+.galeria-inspiracao h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.galeria-inspiracao .subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.galeria-item {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+.galeria-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.emoji-galeria {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.galeria-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.galeria-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* ==================== CATEGORIAS STATS ==================== */
+.categorias-stats {
+    padding: 4rem 0;
+}
+
+.categorias-stats h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.6s ease-out;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin: 0.5rem 0;
+}
+
+.stat-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==================== MAIN / TENDÊNCIAS ==================== */
+main {
+    padding: 4rem 0;
+}
+
+.tendencias {
+    padding: 4rem 0;
+}
+
+.tendencias h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.filtro-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+}
+
+/* Grid de Tendências */
+.tendencias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.card-tendencia {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(0, 212, 255, 0.1));
+    border: 2px solid rgba(255, 20, 147, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: slideUp 0.6s ease-out;
+}
+
+.card-tendencia:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(0, 212, 255, 0.2));
+    border-color: var(--secondary-color);
+    box-shadow: 0 15px 40px rgba(255, 20, 147, 0.3);
+}
+
+.emoji-grande {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.card-tendencia h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.card-tendencia p {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.percentual {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.categoria {
+    display: inline-block;
+    margin-top: 1rem;
+    background: rgba(0, 212, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* ==================== IA FINDER ==================== */
+.ai-finder {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(0, 212, 255, 0.1));
+    border: 2px solid rgba(255, 20, 147, 0.3);
+    border-radius: 15px;
+    padding: 3rem 0;
+    margin: 3rem 0;
+}
+
+.ai-finder h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ai-finder p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+#form-ia {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#input-estilo {
+    padding: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 1rem;
+    min-width: 300px;
+    transition: all 0.3s ease;
+}
+
+#input-estilo:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-ia {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-ia:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+}
+
+.btn-ia:active {
+    transform: scale(0.98);
+}
+
+.resultado-ia {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 20, 147, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.resultado-ia p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* ==================== CONTATO ==================== */
+.contato {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.contato h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contato p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 0.5rem 0;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(0, 212, 255, 0.1));
+    border-top: 2px solid rgba(255, 20, 147, 0.3);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 4rem;
+    color: #999;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+/* ==================== ANIMAÇÕES ==================== */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 20, 147, 0.2);
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 20, 147, 0.5);
+    }
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    header nav {
+        gap: 1rem;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .tendencias h2 {
+        font-size: 1.8rem;
+    }
+
+    .tendencias-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #form-ia {
+        flex-direction: column;
+    }
+
+    #input-estilo {
+        min-width: 100%;
+    }
+
+    .filtros {
+        gap: 0.5rem;
+    }
+
+    .filtro-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header nav a {
+        font-size: 0.8rem;
+    }
+
+    .tendencias h2 {
+        font-size: 1.5rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-tendencia {
+        padding: 1.5rem;
+    }
+
+    .emoji-grande {
+        font-size: 2rem;
+    }
+
+    .card-tendencia h3 {
+        font-size: 1.2rem;
+    }
+
+    .emoji-galeria {
+        font-size: 2rem;
+    }
+
+    .stat-emoji {
+        font-size: 2rem;
+    }
+
+    #input-estilo {
+        min-width: 100%;
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-ia {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
