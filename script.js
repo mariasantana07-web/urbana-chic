@@ -1,4 +1,4 @@
-// Dados de tendências
+// Dados de tendências expandidos
 const tendencias = [
     {
         id: 1,
@@ -6,7 +6,8 @@ const tendencias = [
         emoji: "👕",
         percentual: "87%",
         categoria: "tops",
-        descricao: "Tops curtos são a tendência do momento!"
+        descricao: "Tops curtos que combinam com tudo!",
+        preco: "R$ 45-120"
     },
     {
         id: 2,
@@ -14,7 +15,8 @@ const tendencias = [
         emoji: "👖",
         percentual: "76%",
         categoria: "calcas",
-        descricao: "Calças largas e confortáveis dominam o street-wear"
+        descricao: "Calças largas e confortáveis",
+        preco: "R$ 120-250"
     },
     {
         id: 3,
@@ -22,15 +24,17 @@ const tendencias = [
         emoji: "👗",
         percentual: "92%",
         categoria: "vestidos",
-        descricao: "Elegância e conforto em um único look"
+        descricao: "Elegância e conforto perfeitos",
+        preco: "R$ 150-400"
     },
     {
         id: 4,
-        nome: "Sapatos Balenciaga",
+        nome: "Sneakers Chunky",
         emoji: "👟",
         percentual: "84%",
         categoria: "calcados",
-        descricao: "Sneakers chunky são imprescindíveis"
+        descricao: "Tênis volumosos e modernos",
+        preco: "R$ 200-350"
     },
     {
         id: 5,
@@ -38,7 +42,8 @@ const tendencias = [
         emoji: "🧥",
         percentual: "89%",
         categoria: "tops",
-        descricao: "Blazers grandes e sofisticados para qualquer ocasião"
+        descricao: "Blazers grandes e sofisticados",
+        preco: "R$ 180-450"
     },
     {
         id: 6,
@@ -46,7 +51,8 @@ const tendencias = [
         emoji: "✨",
         percentual: "71%",
         categoria: "calcas",
-        descricao: "Brilho e futurismo na sua combinação"
+        descricao: "Brilho e futurismo combinados",
+        preco: "R$ 80-150"
     },
     {
         id: 7,
@@ -54,7 +60,8 @@ const tendencias = [
         emoji: "💃",
         percentual: "95%",
         categoria: "vestidos",
-        descricao: "Destaque-se em suas festas com estilo"
+        descricao: "Destaque-se em eventos especiais",
+        preco: "R$ 300-800"
     },
     {
         id: 8,
@@ -62,7 +69,44 @@ const tendencias = [
         emoji: "🥾",
         percentual: "81%",
         categoria: "calcados",
-        descricao: "Botas clássicas que combinam com tudo"
+        descricao: "Clássicas e versáteis sempre",
+        preco: "R$ 250-600"
+    },
+    {
+        id: 9,
+        nome: "Colares Chunky",
+        emoji: "💍",
+        percentual: "88%",
+        categoria: "acessorios",
+        descricao: "Acessórios chamam atenção",
+        preco: "R$ 50-200"
+    },
+    {
+        id: 10,
+        nome: "Cintos Largos",
+        emoji: "⏬",
+        percentual: "79%",
+        categoria: "acessorios",
+        descricao: "Definem e marcam a silhueta",
+        preco: "R$ 40-150"
+    },
+    {
+        id: 11,
+        nome: "Maquiagem Bold",
+        emoji: "💄",
+        percentual: "86%",
+        categoria: "maquiagem",
+        descricao: "Looks ousados e marcantes",
+        preco: "R$ 30-300"
+    },
+    {
+        id: 12,
+        nome: "Unhas Artísticas",
+        emoji: "💅",
+        percentual: "82%",
+        categoria: "maquiagem",
+        descricao: "Designs criativos nas unhas",
+        preco: "R$ 40-100"
     }
 ];
 
@@ -76,27 +120,27 @@ const iaSugestoes = {
     elegante: {
         peca: "Vestido Maxi + Botas de Couro",
         emoji: "👗🥾",
-        tendencia: "95% de aprovação entre fashionistas!"
+        tendencia: "95% de aprovação!"
     },
     "street-wear": {
         peca: "Oversized Blazer + Sneakers Chunky",
         emoji: "🧥👟",
-        tendencia: "Combinação predileta dos criadores de estilo!"
+        tendencia: "Favorita dos influenciadores!"
     },
     futurista: {
         peca: "Leggings Holográfico + Cropped Top",
         emoji: "✨👕",
-        tendencia: "Tendência em crescimento de 71%!"
+        tendencia: "Tendência em crescimento!"
     },
     festa: {
         peca: "Vestido de Festa + Botas",
         emoji: "💃🥾",
-        tendencia: "Escolha número 1 para eventos especiais!"
+        tendencia: "Escolha número 1!"
     },
     minimalista: {
         peca: "Jeans + Blazer Oversized",
         emoji: "👖🧥",
-        tendencia: "Simplicidade elegante em alta!"
+        tendencia: "Elegância simples!"
     }
 };
 
@@ -120,6 +164,7 @@ function renderizarTendencias(filtro = 'todos') {
             <p>${tendencia.descricao}</p>
             <div class="percentual">${tendencia.percentual}</div>
             <div class="categoria">${traduzirCategoria(tendencia.categoria)}</div>
+            <p style="margin-top: 1rem; color: #ffd700; font-weight: bold;">${tendencia.preco}</p>
         `;
 
         card.addEventListener('click', () => {
@@ -136,14 +181,33 @@ function traduzirCategoria(categoria) {
         'tops': 'Tops',
         'calcas': 'Calças',
         'vestidos': 'Vestidos',
-        'calcados': 'Calçados'
+        'calcados': 'Calçados',
+        'acessorios': 'Acessórios',
+        'maquiagem': 'Beleza'
     };
     return traducoes[categoria] || categoria;
 }
 
 // Mostrar detalhes da tendência
 function mostrarDetalhes(tendencia) {
-    alert(`${tendencia.emoji} ${tendencia.nome}\n\n${tendencia.descricao}\n\nTendência: ${tendencia.percentual}`);
+    const mensagem = `
+${tendencia.emoji} ${tendencia.nome}
+
+${tendencia.descricao}
+
+Tendência: ${tendencia.percentual}
+Preço: ${tendencia.preco}
+
+Clique em OK para adicionar ao carrinho!`;
+    
+    if (confirm(mensagem)) {
+        adicionarAoCarrinho(tendencia);
+    }
+}
+
+// Adicionar ao carrinho (simulado)
+function adicionarAoCarrinho(item) {
+    alert(`✅ ${item.nome} adicionado ao carrinho!\n\nTotal: ${item.preco}`);
 }
 
 // Configurar filtros
@@ -198,6 +262,7 @@ function configurarIA() {
                     ⭐ ${sugestao.tendencia}
                 </p>
             `;
+            resultado.style.display = 'flex';
         } else {
             resultado.innerHTML = `
                 <p>
@@ -205,10 +270,25 @@ function configurarIA() {
                     Tente: casual, elegante, street-wear, futurista, festa ou minimalista!
                 </p>
             `;
+            resultado.style.display = 'flex';
         }
 
         input.value = '';
     });
+}
+
+// Selecionar categoria
+function selecionarCategoria(categoria) {
+    // Ativa o filtro correspondente
+    const botoes = document.querySelectorAll('.filtro-btn');
+    botoes.forEach(b => {
+        if (b.dataset.filtro === categoria) {
+            b.click();
+        }
+    });
+    
+    // Scroll para tendências
+    document.getElementById('tendencias').scrollIntoView({ behavior: 'smooth' });
 }
 
 // Scroll suave
@@ -227,13 +307,35 @@ function configurarScrollSuave() {
     });
 }
 
+// Adicionar interatividade aos itens da galeria
+function configurarGaleria() {
+    document.querySelectorAll('.galeria-item').forEach((item, index) => {
+        item.addEventListener('click', () => {
+            const titulo = item.querySelector('h3').textContent;
+            alert(`✨ Você escolheu: ${titulo}\n\nVer mais sobre este estilo?`);
+        });
+    });
+}
+
+// Adicionar interatividade aos cards de categoria
+function configurarCategorias() {
+    document.querySelectorAll('.stat-card').forEach((card, index) => {
+        card.addEventListener('mouseenter', () => {
+            card.style.animation = 'pulse 0.5s ease-out';
+        });
+    });
+}
+
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
     renderizarTendencias();
     configurarFiltros();
     configurarIA();
     configurarScrollSuave();
+    configurarGaleria();
+    configurarCategorias();
     
     console.log('🎉 Urbana Chic carregado com sucesso!');
     console.log('📱 Site responsivo e com IA integrada!');
+    console.log('✨ Pronto para descobrir as tendências de moda!');
 });
